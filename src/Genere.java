@@ -1,7 +1,7 @@
-public enum Generi {
+public enum Genere {
     FANTASY,
     HORROR,
     COMMEDIA,
     THRILLER,
-    GIALLO
+    GIALLO,
 }

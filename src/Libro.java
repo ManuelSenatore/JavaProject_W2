@@ -1,59 +1,41 @@
 public class Libro extends Catalogo{
 
-    int codiceISBN;
-    private String titolo;
-    private int annoPubblicazione;
-    private int numeroPagine;
-    private String autore;
-    private Generi genere;
-    private static int key = 0;
+    String autore;
+    Genere genere;
 
-    Libro(int annoPubblicazione, String titolo, String autore, Generi genere, int numeroPagine){
-        setNumeroPagine(numeroPagine);
-        setGenere(genere);
-        setTitolo(titolo);
-        setAutore(autore);
-        setAnnoPubblicazione(annoPubblicazione);
-        codiceISBN = key++;
+
+    public Libro(int codice, String titolo, int annoPubblicazione, int numeroPagine, String autore, Genere genere  ) {
+        super(codice, titolo, annoPubblicazione, numeroPagine );
+        this.autore = autore;
+        this.genere = genere;
+    }
+    public Libro (String titolo, int annoPubblicazione, int numeroPagine, String autore, Genere genere) {
+        super(titolo, annoPubblicazione, numeroPagine );
+        this.autore = autore;
+        this.genere = genere;
     }
 
-    public int getAnnoPubblicazione() {
-        return annoPubblicazione;
+    public String toString() {
+        return "ISBN: " + this.getCodiceISBN()
+                + " - " + " Titolo: " + this.getTitolo()
+                + " - " + " Anno: " + this.getAnnoPubblicazione()
+                + " - " + " Autore: " + this.getAutore()
+                + " - " + " Pagine: " + this.getNumeroPagine();
     }
-
-    public void setAnnoPubblicazione(int annoPubblicazione) {
-        this.annoPubblicazione = annoPubblicazione;
-    }
-
-    public String getTitolo() {
-        return titolo;
-    }
-
-    public void setTitolo(String titolo) {
-        this.titolo = titolo;
-    }
-
+    // GETTER & SETTER
     public String getAutore() {
         return autore;
     }
 
-    public void setAutore(String autore) {
+    public void setAutore( String autore ) {
         this.autore = autore;
     }
 
-    public Generi getGenere() {
+    public Genere getGenere() {
         return genere;
     }
 
-    public void setGenere(Generi genere) {
+    public void setGenere( Genere genere ) {
         this.genere = genere;
-    }
-
-    public int getNumeroPagine() {
-        return numeroPagine;
-    }
-
-    public void setNumeroPagine(int numeroPagine) {
-        this.numeroPagine = numeroPagine;
     }
 }
